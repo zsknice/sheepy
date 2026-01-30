@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>敲打</title>
+  <!-- 引入外部CSS样式文件 -->
+  <link rel="stylesheet" href="qd.css">
+</head>
+<body>
+  <div class="image-container">
+    <img id="poundableImage" src="https://sheepnice.oss-cn-beijing.aliyuncs.com/2026/01/8f2cab0c-fe4c-4c5f-a66e-1b960075a7e6.jpg" alt="可敲打图片">
+    <div id="fist">👊</div>
+  </div>
+  <br>
+  <button id="poundButton">敲打</button>
+  <!-- 移除内联style，样式移到CSS文件 -->
+  <input type="file" id="imageUpload" accept="image/*" />
+  <button id="changeImageButton">更换图片</button>
+  
+  <a href="dq.html" class="back-btn">返回</a>
+
+  <!-- 引入外部JS文件，放body末尾保证DOM先加载 -->
+  <script src="qd.js"></script>
+</body>
+</html>

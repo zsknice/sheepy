@@ -1,0 +1,159 @@
+/* 全局样式 */
+body {
+  text-align: center;
+  background-color: #f6e2fd;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* 图片容器 */
+.image-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* 基础图片样式 */
+img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* 拳头图像样式 */
+#fist {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 100px;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* 图片左右摇晃动画 */
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+.shake {
+  animation: shake 0.6s ease-in-out;
+}
+
+/* 拳头击打动画 */
+@keyframes punch {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(1.2) rotate(20deg);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1) rotate(-10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+}
+.punch-animation {
+  animation: punch 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* 通用按钮样式 */
+button {
+  padding: 12px 24px;
+  font-size: 4.5vw;
+  background-color: #d6b7e1;
+  color: white;
+  width: 60%;
+  max-width: 200px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+button:hover {
+  background-color: #c0a1cb;
+}
+
+/* 返回按钮样式 */
+.back-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 16px;
+  background-color: #e6c5f2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 4vw;
+  z-index: 1000;
+  text-decoration: none;
+  min-width: auto;
+}
+.back-btn:hover {
+  background-color: #d0afd7;
+}
+
+/* 文件上传框样式（原内联style移至此） */
+#imageUpload {
+  display: none;
+}
+
+/* 移动端优化（767px及以下） */
+@media (max-width: 767px) {
+  body {
+    padding: 15px;
+  }
+  img {
+    max-width: 80vw;
+    width: auto;
+    height: auto;
+  }
+  #fist {
+    font-size: 80px;
+  }
+  button {
+    font-size: 5vw;
+    padding: 15px 20px;
+    width: 80%;
+  }
+  .back-btn {
+    font-size: 4vw;
+    padding: 12px 16px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* 电脑端样式优化（768px及以上） */
+@media (min-width: 768px) {
+  img {
+    width: 300px;
+  }
+  #fist {
+    font-size: 200px;
+  }
+  button {
+    font-size: 16px;
+    width: 150px;
+  }
+  .back-btn {
+    font-size: 16px;
+  }
+}
